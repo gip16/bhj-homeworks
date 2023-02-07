@@ -6,4 +6,4 @@ function timerCounter() {
     alert('Вы победили в конкурсе!');
   }
 }
-let intervalId = setInterval(timerCounter, 1000);
+const intervalId = setInterval(timerCounter, 1000);
