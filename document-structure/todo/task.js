@@ -10,7 +10,7 @@ form.addEventListener('submit', (e) => {
 input.addEventListener('keyup', (e) => {
   if (e.code === 'Enter' && input.value) {
     e.preventDefault();
-    taskList.insertAdjacentHTML('beforeend', `
+    taskList.insertAdjacentHTML('afterbegin', `
       <div class="task">
         <div class="task__title">
           ${input.value}
@@ -19,7 +19,7 @@ input.addEventListener('keyup', (e) => {
       </div>
     `);
     input.value = '';
-    taskList.lastElementChild.lastElementChild.addEventListener('click', (e) => {
+    taskList.firstElementChild.lastElementChild.addEventListener('click', (e) => {
       e.preventDefault();
       e.currentTarget.parentElement.remove();
     });
@@ -29,7 +29,7 @@ input.addEventListener('keyup', (e) => {
 addButton.addEventListener('click', (e) => {
   if (input.value) {
     e.preventDefault();
-    taskList.insertAdjacentHTML('beforeend', `
+    taskList.insertAdjacentHTML('afterbegin', `
       <div class="task">
         <div class="task__title">
           ${input.value}
@@ -38,7 +38,7 @@ addButton.addEventListener('click', (e) => {
       </div>
     `);
     input.value = '';
-    taskList.lastElementChild.lastElementChild.addEventListener('click', (e) => {
+    taskList.firstElementChild.lastElementChild.addEventListener('click', (e) => {
       e.preventDefault();
       e.currentTarget.parentElement.remove();
     });
