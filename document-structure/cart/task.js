@@ -33,5 +33,6 @@ for (let product of products) {
         </div>
       `)
     }
+    productValue.textContent = 1;
   })
 }
