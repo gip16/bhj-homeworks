@@ -18,7 +18,7 @@ widgetSide.addEventListener('click', () => {
 });
 
 input.addEventListener('keyup', (e) => {
-  if (e.code === 'Enter' && input.value) {
+  if (e.code === 'Enter' && input.value.trim()) {
     messages.innerHTML += `
       <div class="message message_client">
       <div class="message__time">${date}</div>
