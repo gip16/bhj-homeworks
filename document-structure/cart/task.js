@@ -23,7 +23,7 @@ for (let product of products) {
     const imageSrc = e.currentTarget.closest('.product').children[1].src;
 
     if (cartProducts.querySelector(`div[data-id='${dataId}']`)) {
-      let cartCount = cartProducts.querySelector('.cart__product-count');
+      const cartCount = cartProducts.querySelector('.cart__product-count');
       cartCount.textContent = Number(cartCount.textContent) + Number(productValue.textContent);
     } else {
       cartProducts.insertAdjacentHTML('afterbegin', `

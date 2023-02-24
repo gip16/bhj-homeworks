@@ -11,8 +11,10 @@ for (let link of links) {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     for (let link of links) {
-      link.nextElementSibling.classList.remove('tooltip_active')
+      if (link.nextElementSibling !== tooltip) {
+        link.nextElementSibling.classList.remove('tooltip_active');
+      }
     }
-    tooltip.classList.add('tooltip_active');
+    tooltip.classList.toggle('tooltip_active');
   });
 }
