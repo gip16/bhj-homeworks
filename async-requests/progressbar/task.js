@@ -7,10 +7,9 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const xhr = new XMLHttpRequest();
-  xhr.addEventListener('progress', (e) => {
+  xhr.upload.addEventListener('progress', (e) => {
     progress.max = e.total;
     progress.value = e.loaded;
-    console.log(e.lengthComputable);
   });
 
   xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/upload');
