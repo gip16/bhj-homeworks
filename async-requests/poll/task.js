@@ -6,7 +6,7 @@ let answersArr;
 
 xhr.addEventListener('readystatechange', () => {
   if (xhr.readyState === xhr.DONE) {
-    responceObj = JSON.parse(xhr.responseText);
+    responceObj = JSON.parse(xhr.response);
     answersArr = responceObj['data']['answers'];
 
     title.innerHTML = responceObj['data']['title'];
