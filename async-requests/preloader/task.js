@@ -6,7 +6,7 @@ let valute = {};
 
 xhr.addEventListener('readystatechange', () => {
   if (xhr.readyState === xhr.DONE) {
-    responceObj = JSON.parse(xhr.responseText);
+    responceObj = JSON.parse(xhr.response);
     valute = responceObj["response"]['Valute'];
     img.classList.remove('loader_active')
     for (let key in valute) {
