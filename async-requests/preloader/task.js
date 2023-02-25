@@ -1,14 +1,13 @@
 const img = document.querySelector('#loader');
 const items = document.querySelector('#items');
 const xhr = new XMLHttpRequest();
-let responceObj;
-let valute = {};
 
 xhr.addEventListener('readystatechange', () => {
   if (xhr.readyState === xhr.DONE) {
-    responceObj = JSON.parse(xhr.response);
+    img.classList.remove('loader_active');
+    let responceObj = JSON.parse(xhr.response);
+    let valute = {};
     valute = responceObj["response"]['Valute'];
-    img.classList.remove('loader_active')
     for (let key in valute) {
       items.insertAdjacentHTML('beforeend', `
         <div class="item">

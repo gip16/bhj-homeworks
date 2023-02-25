@@ -1,13 +1,11 @@
 const title = document.querySelector('#poll__title');
 const answers = document.querySelector('#poll__answers');
 const xhr = new XMLHttpRequest();
-let responceObj;
-let answersArr;
 
 xhr.addEventListener('readystatechange', () => {
   if (xhr.readyState === xhr.DONE) {
-    responceObj = JSON.parse(xhr.response);
-    answersArr = responceObj['data']['answers'];
+    let responceObj = JSON.parse(xhr.response);
+    let answersArr = responceObj['data']['answers'];
 
     title.innerHTML = responceObj['data']['title'];
     for (let answer of answersArr) {
