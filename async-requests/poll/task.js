@@ -5,9 +5,8 @@ const xhr = new XMLHttpRequest();
 xhr.addEventListener('readystatechange', () => {
   if (xhr.readyState === xhr.DONE) {
     let responceObj = JSON.parse(xhr.response);
-    let answersArr = responceObj['data']['answers'];
-
     title.innerHTML = responceObj['data']['title'];
+    let answersArr = responceObj['data']['answers'];
     for (let answer of answersArr) {
       answers.insertAdjacentHTML('beforeend', `
         <button class="poll__answer">${answer}</button>
