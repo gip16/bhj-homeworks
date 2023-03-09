@@ -3,7 +3,7 @@ const close = document.querySelector('.modal__close');
 
 close.addEventListener('click', () => modal.classList.remove('modal_active'));
 
-if (!localStorage.modal) {
-modal.classList.add('modal_active');
-  localStorage.setItem('modal', true);
+if (!document.cookie) {
+  modal.classList.add('modal_active');
+  document.cookie = 'modal=true';
 }
